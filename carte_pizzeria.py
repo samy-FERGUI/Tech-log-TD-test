@@ -1,4 +1,3 @@
-from carte_pizzeria import CartePizzeria
 class CartePizzeria:
     def __init__(self) -> None:
         self.liste_pizzas = []
