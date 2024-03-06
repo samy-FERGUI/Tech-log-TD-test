@@ -19,9 +19,23 @@ class TestCartePizzeria(unittest.TestCase):
     def test_remove_number(self): 
         carte_pazz = CartePizzeria()
         pizza = Mock()  
+        pizza.name = "jemmy"
         carte_pazz.add_pizza(pizza)
-        carte_pazz.remove_pizza(pizza)
+        carte_pazz.remove_pizza("jemmy")
         self.assertEqual(carte_pazz.nb_pizzas(), 0)
+
+    def test_remove_pizza_by_name(self):
+        carte_pazz = CartePizzeria()
+        pizza = Mock()  
+        pizza2 = Mock()
+        pizza.name = "margarita"
+        pizza2.name = "vvegii"
+        carte_pazz.add_pizza(pizza)
+        carte_pazz.add_pizza(pizza2)
+        self.assertEqual(carte_pazz.nb_pizzas(), 2)
+        carte_pazz.remove_pizza("margarita")
+        self.assertEqual(carte_pazz.nb_pizzas(), 1)
+        
 
     def test_remove_pizza_not_found(self):
         carte = CartePizzeria()

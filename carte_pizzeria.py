@@ -14,8 +14,8 @@ class CartePizzeria:
 
     def remove_pizza(self, name):
         for pizz in self.liste_pizzas:
-            if (pizz == name):
-                self.liste_pizzas.remove(name)
+            if (pizz.name == name):
+                self.liste_pizzas.remove(pizz)
                 return
-        raise PizzeriaException("error")
+        raise PizzeriaException(f"error {name}")
         
