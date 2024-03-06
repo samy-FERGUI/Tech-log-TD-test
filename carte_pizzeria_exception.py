@@ -1,0 +1,2 @@
+class PizzeriaException(Exception):
+    pass
